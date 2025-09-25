@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Calculadora Simples</title>
+        <title>Calculadora  de Juros Simples</title>
     </head>
     <body>
       <body style="background-color: #d3f566ff;">
@@ -33,7 +33,7 @@
             $n1 = $_GET['n1'];
             $n2 = $_GET['n2'];
 
-            // Funções
+            
             function soma($n1, $n2) {
                 return $n1 + $n2;
             }
@@ -53,16 +53,19 @@
                 return $n1 / $n2;
             }
 
-            
+            function exponenciacao($n1, $n2) {
+                return pow($n1, $n2);
+            }
+
+            function modulo($n1, $n2) {
+                return ($n1 % $n2);  
+            }
+
+            function juros($n1, $n2) {
+                return ($n1 * $n2) / 100;
             }
 
             
-            }
-
-           
-            }
-
-            // Exibir resultado
             if ($_GET['op'] == 'soma') {
                 echo "<h2>Resultado: $n1 + $n2 = " . soma($n1, $n2) . "</h2>";
             } elseif ($_GET['op'] == 'subtracao') {
@@ -71,8 +74,12 @@
                 echo "<h2>Resultado: $n1 × $n2 = " . multiplicacao($n1, $n2) . "</h2>";
             } elseif ($_GET['op'] == 'divisao') {
                 echo "<h2>Resultado: $n1 ÷ $n2 = " . divisao($n1, $n2) . "</h2>";
-           
-            
+            } elseif ($_GET['op'] == 'exponenciacao') {
+                echo "<h2>Resultado: $n1 ** $n2 = " . exponenciacao($n1, $n2) . "</h2>";
+            } elseif ($_GET['op'] == 'modulo') {
+                echo "<h2>Resultado: $n1 % $n2 = " . modulo($n1, $n2) . "</h2>"; 
+            } elseif ($_GET['op'] == 'juros simples') {
+                echo "<h2>Resultado: Juros Simples sobre $n1 com taxa de $n2% = " . juros($n1, $n2) . "</h2>";
             }
 
         } else {
@@ -83,3 +90,45 @@
 
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
